@@ -27,4 +27,4 @@ $$
 $$
 u(-1)=u(1) = 1
 $$
-On cherche une solution de la forme polynômiale $u_{2}(x)=1+(1-x^{2})(a_{0}+a_{1}x+a_{2}x^{2})$ afin de respecter les conditions initiales avec 3 degrés de libertés $(a_{0},a_{1},a_{2})$.
+On cherche une solution de la forme polynômiale $u_{2}(x)=1+(1-x^{2})(a_{0}+a_{1}x+a_{2}x^{2})$ afin de respecter les conditions initiales avec 3 degrés de libertés $(a_{0},a_{1},a_{2})$. Test.
