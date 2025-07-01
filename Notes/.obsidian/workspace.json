@@ -13,12 +13,12 @@
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": "Semaine1/chebyshev_p.m",
-                "bFile": "Semaine1/chebyshev_p.m",
+                "aFile": "Notes/Semaine 1 - Introduction.md",
+                "bFile": "Notes/Semaine 1 - Introduction.md",
                 "aRef": ""
               },
               "icon": "diff",
-              "title": "Diff: chebyshev_p.m"
+              "title": "Diff: Semaine 1 - Introduction"
             }
           }
         ]
