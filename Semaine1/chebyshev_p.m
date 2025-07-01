@@ -8,5 +8,5 @@ x = cos(pi * k / N); % Points de Chebyshev
 plot(x, zeros(size(x)), 'o')
 title('Points de Chebyshev')
 xlabel('x')
-ylim([-0.1 0.1])c
+ylim([-0.1 0.1])
 grid on
