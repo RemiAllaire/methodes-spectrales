@@ -27,3 +27,4 @@ $$
 $$
 u(-1)=u(1) = 1
 $$
+On cherche une solution de la forme polynômiale $u_{2} = (1-x^{2})$
