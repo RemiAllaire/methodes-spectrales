@@ -1,5 +1,6 @@
 {
   "main": {
+<<<<<<< HEAD
     "id": "8782f0997e29a4a0",
     "type": "split",
     "children": [
@@ -9,6 +10,17 @@
         "children": [
           {
             "id": "ff3087ce580448ed",
+=======
+    "id": "c7b9e32353e4174e",
+    "type": "split",
+    "children": [
+      {
+        "id": "16018fa067e1f332",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b4fbe6005dcf8b46",
+>>>>>>> e09f8006f3f7da0443e0043407f353fe336b4813
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -27,6 +39,7 @@
     "direction": "vertical"
   },
   "left": {
+<<<<<<< HEAD
     "id": "e8942ea6233f6693",
     "type": "split",
     "children": [
@@ -36,6 +49,17 @@
         "children": [
           {
             "id": "f6efb73974c957ff",
+=======
+    "id": "2b443fd4222e5923",
+    "type": "split",
+    "children": [
+      {
+        "id": "9565c6453240cd64",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1737acf0a2f19254",
+>>>>>>> e09f8006f3f7da0443e0043407f353fe336b4813
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,11 +68,19 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
+<<<<<<< HEAD
               "title": "Files"
             }
           },
           {
             "id": "c66674b4f7086216",
+=======
+              "title": "Explorateur de fichiers"
+            }
+          },
+          {
+            "id": "0cae70f74a3ae200",
+>>>>>>> e09f8006f3f7da0443e0043407f353fe336b4813
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +97,11 @@
             }
           },
           {
+<<<<<<< HEAD
             "id": "c36a9cffa7287b93",
+=======
+            "id": "62ea0b8e268e15f5",
+>>>>>>> e09f8006f3f7da0443e0043407f353fe336b4813
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -81,6 +117,7 @@
     "width": 300
   },
   "right": {
+<<<<<<< HEAD
     "id": "f51c0488f3cad32b",
     "type": "split",
     "children": [
@@ -90,6 +127,17 @@
         "children": [
           {
             "id": "7acd8e28be84fd2a",
+=======
+    "id": "edd0f8f7ea412cc3",
+    "type": "split",
+    "children": [
+      {
+        "id": "41bd93db2122534f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c9c7c35fee5bd3c1",
+>>>>>>> e09f8006f3f7da0443e0043407f353fe336b4813
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -108,7 +156,11 @@
             }
           },
           {
+<<<<<<< HEAD
             "id": "47a66d37bb3a13d5",
+=======
+            "id": "ccae64c847974b35",
+>>>>>>> e09f8006f3f7da0443e0043407f353fe336b4813
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -122,7 +174,11 @@
             }
           },
           {
+<<<<<<< HEAD
             "id": "fd62361f75790357",
+=======
+            "id": "07b74b11d222a419",
+>>>>>>> e09f8006f3f7da0443e0043407f353fe336b4813
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,7 +193,11 @@
             }
           },
           {
+<<<<<<< HEAD
             "id": "7d6f159878bb2d5f",
+=======
+            "id": "e14677c54b2226aa",
+>>>>>>> e09f8006f3f7da0443e0043407f353fe336b4813
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -160,6 +220,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+<<<<<<< HEAD
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -173,4 +234,16 @@
     "Semaine 1 - Introduction.md",
     "Welcome.md"
   ]
+=======
+      "switcher:Ouvrir le sélecteur rapide": false,
+      "graph:Ouvrir la vue graphique": false,
+      "canvas:Créer une nouvelle toile": false,
+      "daily-notes:Ouvrir la note quotidienne": false,
+      "templates:Insérer le modèle": false,
+      "command-palette:Ouvrir la palette de commandes": false
+    }
+  },
+  "active": "b4fbe6005dcf8b46",
+  "lastOpenFiles": []
+>>>>>>> e09f8006f3f7da0443e0043407f353fe336b4813
 }
