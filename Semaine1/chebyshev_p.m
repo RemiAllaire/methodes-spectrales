@@ -9,4 +9,5 @@ plot(x, zeros(size(x)), 'o')
 title('Points de Chebyshev')
 xlabel('x')
 ylim([-0.1 0.1])
+1+1;
 grid on
