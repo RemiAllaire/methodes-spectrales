@@ -4,21 +4,51 @@
     "type": "split",
     "children": [
       {
-        "id": "16018fa067e1f332",
+        "id": "8f849f56b7f4bc70",
         "type": "tabs",
         "children": [
           {
-            "id": "b4fbe6005dcf8b46",
+            "id": "d85a547a10b9b771",
             "type": "leaf",
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": "Notes/.obsidian/community-plugins.json",
-                "bFile": "Notes/.obsidian/community-plugins.json",
+                "aFile": "Notes/conflict-files-obsidian-git.md",
+                "bFile": "Notes/conflict-files-obsidian-git.md",
                 "aRef": ""
               },
               "icon": "diff",
-              "title": "Diff: community-plugins.json"
+              "title": "Diff: conflict-files-obsidian-git"
+            }
+          },
+          {
+            "id": "d891975cc2b74ade",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "Semaine1/notes.txt",
+                "bFile": "Semaine1/notes.txt",
+                "aRef": "HEAD",
+                "bRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: notes.txt"
+            }
+          },
+          {
+            "id": "99c87b2449b8d401",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "Notes/.obsidian/app.json",
+                "bFile": "Notes/.obsidian/app.json",
+                "aRef": "HEAD",
+                "bRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: app.json"
             }
           }
         ]
@@ -166,7 +196,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 343.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,8 +209,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b4fbe6005dcf8b46",
+  "active": "d85a547a10b9b771",
   "lastOpenFiles": [
-    "Semaine 1 - Introduction.md"
+    "Semaine 1 - Introduction.md",
+    "conflict-files-obsidian-git.md"
   ]
 }
