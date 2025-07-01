@@ -1,5 +1,5 @@
 ## Objectif:
-Résumé la matière et résoudre les exemple avec des codes matlab associés.
+Résumé la matière et résoudre les exemples avec des codes Matlab associés.
 
 ## Notes
 
