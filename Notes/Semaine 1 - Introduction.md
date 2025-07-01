@@ -53,3 +53,8 @@ On peut comparer avec la vraie solution
 $$
 \exp\left( \frac{x^{4}-1}{4} \right)
 $$
+Voici la difference entre les deux:
+![Solution exacte (bleu) vs approximation](uexact_vs_u2.png)
+
+et voici l'erreur:
+![[erreur1.png]]

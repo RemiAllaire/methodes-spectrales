@@ -4,51 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8f849f56b7f4bc70",
+        "id": "18b22deec6911ccf",
         "type": "tabs",
         "children": [
           {
-            "id": "d85a547a10b9b771",
+            "id": "f0f583c8608d0f2b",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "Notes/.obsidian/app.json",
-                "bFile": "Notes/.obsidian/app.json",
-                "aRef": ""
+                "file": "Semaine 1 - Introduction.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: app.json"
-            }
-          },
-          {
-            "id": "d891975cc2b74ade",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": "Semaine1/notes.txt",
-                "bFile": "Semaine1/notes.txt",
-                "aRef": "HEAD",
-                "bRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: notes.txt"
-            }
-          },
-          {
-            "id": "99c87b2449b8d401",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": "Notes/.obsidian/app.json",
-                "bFile": "Notes/.obsidian/app.json",
-                "aRef": "HEAD",
-                "bRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: app.json"
+              "icon": "lucide-file",
+              "title": "Semaine 1 - Introduction"
             }
           }
         ]
@@ -196,7 +166,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 343.5
+    "width": 342.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -209,9 +179,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "344d4076ab6054f6",
+  "active": "f0f583c8608d0f2b",
   "lastOpenFiles": [
+    "image 1.md",
+    "image.md",
     "Semaine 1 - Introduction.md",
+    "images/uexact_vs_u2.png",
+    "images/erreur1.png",
+    "images",
+    "New folder",
     "conflict-files-obsidian-git.md"
   ]
 }
