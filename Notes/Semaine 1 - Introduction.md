@@ -39,4 +39,17 @@ R(x;a_{0},a_{1},a_{2}) &= u_{2x x}-(x^{6}+3x^{2})u_{2} \\ \\
 $$
 
 
-Pour ce faire, on procède par collocation. On choisit 3 points $\{ x_{1},x_{2},x_{3} \}$ (même nombre que de paramètre/degré liberté) où l'on suppose que $u_{2}$ est exacte, c'est à dire que $R(x_{1})=R(x_{2})=R(x_{3}) =0$. Le choix de ces points constitue un problème crucial afin de minimiser l'erreur. Prenons les 3 points de Chebyshev $\{ -1,0,1 \}$. On obtiens les 3 équations:
+Pour ce faire, on procède par collocation. On choisit 3 points $\{ x_{1},x_{2},x_{3} \}$ (même nombre que de paramètre/degré liberté) où l'on suppose que $u_{2}$ est exacte, c'est à dire que $R(x_{1})=R(x_{2})=R(x_{3}) =0$. On peut chosir $\{ -0.5,0,0.5 \}$. Cela entraine une système d'équations pour les paramètres $(a_{0},a_{1},a_{2})$. On trouve que 
+$$
+\begin{align}
+a_{0}=-\frac{764}{3807}, \quad a_{1}=0, \quad a_{2}=-\frac{764}{3807}
+\end{align}
+$$
+Ce qui donne comme fonction d'approximation:
+$$
+u_{2}(x)=(x^{2}-1)\left( \frac{784x^{2}}{3807}+\frac{784}{3807} \right)+1
+$$
+On peut comparer avec la vraie solution
+$$
+\exp\left( \frac{x^{4}-1}{4} \right)
+$$
