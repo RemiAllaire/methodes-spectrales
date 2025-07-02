@@ -59,8 +59,27 @@ Voici la difference entre les deux:
 et voici l'erreur:
 ![[erreur1.png]]
 
-# Comparaison entre méthode pseudo-spectrales et de différence (locale)
+# Comparaison entre méthode pseudo-spectrales et de différence (finie et éléments)
 
-Pour les méthodes de différences, le domaine est divisé en intervalles. Les fonctions de bases $\phi _{n}(x)$ sont non nulles  seulement sur un petit nombre de sous intervalles, d'où le comportement local. Ainsi, cela produit une matrice de différentiation qui est dite creuse, qui possède plusieurs avantages computationnels. Cependant, pour approximer les dérivées, en utilisant les différences centrées, on obtient souvent un ordre de convergence $O(h^{2}),O(h^{4}), O(h^{k})$ dépendant du nombre de points qu'on utilise pour l'approximation.
+Pour les méthodes de différences, le domaine est divisé en intervalles. Les fonctions de bases $\phi _{n}(x)$ sont non nulles  seulement sur un petit nombre de sous intervalles, d'où le comportement local. Ainsi, cela produit une matrice de différentiation qui est dite creuse, qui possède plusieurs avantages computationnels. Cependant, pour approximer les dérivées, en utilisant les différences centrées, on obtient souvent un ordre de convergence $O(h^{2}),O(h^{4}), O(h^{k})$  (ex: extrapolation de Richardson), dépendant du nombre de points qu'on utilise pour l'approximation.
 
 De l'autre coté, pour les méthodes pseudo-spectrales, si on effectue une collocation à N points, les N points sont utilisé pour chaque fonction de bases. Il faudrait parvenir à une méthode de différence avec un ordre de $O(h^{N})$ pour l'équivaloir. Si on double le nombre de points, non seulement, il faudrait parvenir à $O(h^{2N})$, mais en plus vu que l'espace entre les points $h = O\left( \frac{1}{2N} \right)$, l'ordre de convergence de la méthode pseudo-spectrales  est $O\left[\left( \frac{1}{N} \right)^{N}\right]$. C'est pourquoi on dit que les méthodes pseudo-spectrales ont une convergence "exponentielle", plus vite que la convergence polynomiale pour tout $N$ fini.
+
+Donc les méthodes pseudo-spectrales sont utilises si:
+- On a besoin d'une très grande précision décimale (physique, chimie).
+- On veut parvenir à la précision requise avec peu de degrés de liberté et donc moins de points
+Ironiquement, cette deuxième propriété rends les méthodes pseudo-spectrales efficientes en mémoire. Ainsi, même en météorologie, où la précision n'est pas l'objectif, les méthodes spectrales sont utilisées. 
+Cependant, il y a des défauts:
+- Plus difficile à programmer et implémenter
+- Plus gros coût calculatoire (non de mémoire) pour un même degré de liberté
+- Travailler sur un domaine  irrégulier affecte plus la précision que les autres méthodes.
+
+# 1.6 Choix des fonctions de bases
+
+Les fonctions de bases $\phi_{n(x)}$ doivent idéalement être
+- Facile à calculer
+- Converger rapidement
+- Complètent l'espace
+
+
+

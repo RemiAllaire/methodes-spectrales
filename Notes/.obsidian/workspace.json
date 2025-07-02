@@ -166,7 +166,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 274.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,7 +179,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7503bc244de277ef",
+  "active": "ff3087ce580448ed",
   "lastOpenFiles": [
     "images/uexact_vs_u2.png",
     "images/erreur1.png",
