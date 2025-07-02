@@ -100,4 +100,4 @@ $$
 \cos n\theta = 2\cos \theta \cos[(n-1)\theta] - \cos[(n-2)\theta]
 $$
 
-Ils constituent en un excellent choix de base pourvu une solution non périodique et un domaine fini.
+Ils constituent en un excellent choix de base pourvu une solution non périodique  (sinon Fourier) et un domaine fini (sinon Laguerre, Hermite ou Tchebychev rationnel).
