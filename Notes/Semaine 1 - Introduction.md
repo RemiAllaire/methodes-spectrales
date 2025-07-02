@@ -59,3 +59,8 @@ Voici la difference entre les deux:
 et voici l'erreur:
 ![[erreur1.png]]
 
+# Comparaison entre méthode pseudo-spectrales et de différence (locale)
+
+Pour les méthodes de différences, le domaine est divisé en intervalles. Les fonctions de bases $\phi _{n}(x)$ sont non nulles  seulement sur un petit nombre de sous intervalles, d'où le comportement local. Ainsi, cela produit une matrice de différentiation qui est dite creuse, qui possède plusieurs avantages computationnels. Cependant, pour approximer les dérivées, en utilisant les différences centrées, on obtient souvent un ordre de convergence $O(h^{2}),O(h^{4}), O(h^{k})$ dépendant du nombre de points qu'on utilise pour l'approximation.
+
+De l'autre coté, pour les méthodes pseudo-spectrales, si on effectue une collocation à N points, les N points sont utilisé pour chaque fonction de bases. Il faudrait parvenir à une méthode de différence avec un ordre de $O(h^{N})$ pour l'équivaloir. Si on double le nombre de points, non seulement, il faudrait parvenir à $O(h^{2N})$, mais en plus vu que l'espace entre les points $h = O\left( \frac{1}{2N} \right)$, l'ordre de convergence de la méthode pseudo-spectrales  est $O\left[\left( \frac{1}{N} \right)^{N}\right]$. C'est pourquoi on dit que les méthodes pseudo-spectrales ont une convergence "exponentielle", plus vite que la convergence polynomiale pour tout $N$ fini.

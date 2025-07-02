@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "c7b9e32353e4174e",
+    "id": "8782f0997e29a4a0",
     "type": "split",
     "children": [
       {
-        "id": "18b22deec6911ccf",
+        "id": "c2430280197b5e10",
         "type": "tabs",
         "children": [
           {
-            "id": "f0f583c8608d0f2b",
+            "id": "ff3087ce580448ed",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "2b443fd4222e5923",
+    "id": "e8942ea6233f6693",
     "type": "split",
     "children": [
       {
-        "id": "9565c6453240cd64",
+        "id": "0c28fc24c4a7d083",
         "type": "tabs",
         "children": [
           {
-            "id": "1737acf0a2f19254",
+            "id": "f6efb73974c957ff",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,11 +44,11 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Explorateur de fichiers"
+              "title": "Files"
             }
           },
           {
-            "id": "0cae70f74a3ae200",
+            "id": "c66674b4f7086216",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "62ea0b8e268e15f5",
+            "id": "c36a9cffa7287b93",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -81,15 +81,15 @@
     "width": 300
   },
   "right": {
-    "id": "edd0f8f7ea412cc3",
+    "id": "f51c0488f3cad32b",
     "type": "split",
     "children": [
       {
-        "id": "41bd93db2122534f",
+        "id": "10476921a1c2bc41",
         "type": "tabs",
         "children": [
           {
-            "id": "c9c7c35fee5bd3c1",
+            "id": "7acd8e28be84fd2a",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -108,7 +108,7 @@
             }
           },
           {
-            "id": "ccae64c847974b35",
+            "id": "47a66d37bb3a13d5",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -122,7 +122,7 @@
             }
           },
           {
-            "id": "07b74b11d222a419",
+            "id": "fd62361f75790357",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,7 +137,7 @@
             }
           },
           {
-            "id": "e14677c54b2226aa",
+            "id": "7d6f159878bb2d5f",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -152,7 +152,7 @@
             }
           },
           {
-            "id": "344d4076ab6054f6",
+            "id": "7503bc244de277ef",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -166,28 +166,28 @@
       }
     ],
     "direction": "horizontal",
-    "width": 342.5
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Ouvrir le sélecteur rapide": false,
-      "graph:Ouvrir la vue graphique": false,
-      "canvas:Créer une nouvelle toile": false,
-      "daily-notes:Ouvrir la note quotidienne": false,
-      "templates:Insérer le modèle": false,
-      "command-palette:Ouvrir la palette de commandes": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f0f583c8608d0f2b",
+  "active": "7503bc244de277ef",
   "lastOpenFiles": [
-    "image 1.md",
-    "image.md",
-    "Semaine 1 - Introduction.md",
     "images/uexact_vs_u2.png",
     "images/erreur1.png",
     "images",
-    "New folder",
-    "conflict-files-obsidian-git.md"
+    "image.md",
+    "image 1.md",
+    "Semaine 1 - Introduction.md",
+    "anthropormorphic_desert_hound_riding_motorbike_rudimentary_motorcycle_post_apocalyptic_width-960_height-960_negative_prompt-human_ugly_clean_deformed_happy_seed-3470294471ts-1670873994_idx-0.png",
+    "Welcome.md"
   ]
 }
