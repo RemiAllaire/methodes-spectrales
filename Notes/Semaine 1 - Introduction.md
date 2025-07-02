@@ -81,5 +81,23 @@ Les fonctions de bases $\phi_{n(x)}$ doivent idéalement être
 - Converger rapidement
 - Complètent l'espace
 
+Un bon candidat de $\phi_{n}(x)$ dans la majorité des cas sont les séries de Fourier exprimées en terme de  sommation de $\cos(nx)\text{ et } \sin(nx)$.
+# Note sur les polynômes de Tchebychev
 
+Cela inclus donc comme base la famille de polynômes de Tchebychev, très utilisée pour approximer des fonctions.
+En effet, on peut les définir comme
+$$
+T_{n}(\cos \theta )= \cos(n\theta)
+$$
+De plus ils sont facilement calculable avec la relation de récurrence
+$$
+T_{n+1}(x) = 2xT_{n}(x)-T_{n-1}(x)
+$$
+avec $T_{0} = 1$ et $T_{1}= x$.
 
+Cela équivaut aussi à la relation
+$$
+\cos n\theta = 2\cos \theta \cos[(n-1)\theta] - \cos[(n-2)\theta]
+$$
+
+Ils constituent en un excellent choix de base pourvu une solution non périodique et un domaine fini.
