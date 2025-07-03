@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Semaine 1 - Introduction"
             }
+          },
+          {
+            "id": "f6c6e787749aa974",
+            "type": "leaf",
+            "state": {
+              "type": "split-diff-view",
+              "state": {
+                "aFile": "Semaine2/SerieFourier.mlx",
+                "bFile": "Semaine2/SerieFourier.mlx",
+                "aRef": ""
+              },
+              "icon": "diff",
+              "title": "Diff: SerieFourier.mlx"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -113,12 +128,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Semaine 1 - Introduction.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Semaine 1 - Introduction"
+              "title": "Outgoing links"
             }
           },
           {
@@ -179,14 +193,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ff3087ce580448ed",
+  "active": "f6c6e787749aa974",
   "lastOpenFiles": [
+    "Semaine 1 - Chapitre 2.md",
+    "Semaine 1 - Introduction.md",
     "images/uexact_vs_u2.png",
     "images/erreur1.png",
     "images",
     "image.md",
     "image 1.md",
-    "Semaine 1 - Introduction.md",
     "anthropormorphic_desert_hound_riding_motorbike_rudimentary_motorcycle_post_apocalyptic_width-960_height-960_negative_prompt-human_ugly_clean_deformed_happy_seed-3470294471ts-1670873994_idx-0.png",
     "Welcome.md"
   ]
