@@ -33,3 +33,9 @@ f(x) \approx \sum_{n=1}^{\infty}(-1)^{n+1} \frac{2}{n}\sin(nx)
 $$
 Graphiquement, (voir le script serie de fourier)
 ![[FourierX.png]]
+$$
+\sum_{n=1}^{\infty}\int  \, dx
+$$
+$$
+g(\xi + \pi) = g(\xi) + g'(\xi)h + g''(\xi) \frac{h^{2}}{2!} + \dots
+$$
