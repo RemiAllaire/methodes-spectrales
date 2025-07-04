@@ -31,4 +31,5 @@ Ainsi
 $$
 f(x) \approx \sum_{n=1}^{\infty}(-1)^{n+1} \frac{2}{n}\sin(nx)
 $$
-Graphiquement:
+Graphiquement, (voir le script serie de fourier)
+![[FourierX.png]]

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes/Semaine 1 - Introduction.md",
+                "file": "Notes/Semaine 2 - Chapitre 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Semaine 1 - Introduction"
+              "title": "Semaine 2 - Chapitre 2"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Semaine 1 - Introduction.md",
+                "file": "Notes/Semaine 2 - Chapitre 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Semaine 1 - Introduction"
+              "title": "Backlinks for Semaine 2 - Chapitre 2"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Semaine 1 - Introduction.md",
+                "file": "Notes/Semaine 2 - Chapitre 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Semaine 1 - Introduction"
+              "title": "Outgoing links from Semaine 2 - Chapitre 2"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Notes/Semaine 1 - Introduction.md",
+                "file": "Notes/Semaine 2 - Chapitre 2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Semaine 1 - Introduction"
+              "title": "Outline of Semaine 2 - Chapitre 2"
             }
           },
           {
@@ -179,14 +179,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f42a2c3bdb5b5989",
+  "active": "a293432a5d3ef06e",
   "lastOpenFiles": [
+    "Notes/images/FourierX.png",
+    "Notes/FourierX.png",
+    "FourierX.png",
+    "Notes/Semaine 1 - Introduction.md",
+    "Notes/Semaine 2 - Chapitre 2.md",
     "Semaine2/SerieFourier.asv",
     "Semaine2/untitled.mlx",
     "Semaine2/Copy_of_SerieFourier.m",
     "Semaine2/Copy_of_SerieFourier.mlx",
-    "Notes/Semaine 1 - Chapitre 2.md",
-    "Notes/Semaine 1 - Introduction.md",
     "Notes/image 1.md",
     "Semaine1/uexact_vs_u2.png",
     "Semaine1/exemple1.pdf"
