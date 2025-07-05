@@ -76,4 +76,15 @@ k \quad \text{geometrique} \\
 0              \quad \text{subgeometrique} \\
 \end{cases}
 $$
+En general, les fonctions entieres ont une convergence supergeometrique. Les fonctions ayant des singlularites ou des poles sont geometriques (r=1).
 
+Si une fonction a une convergence geometrique, son taux asymptotique $\mu$ est
+$$
+a_{n}\sim []e^{-n\mu}
+$$
+ou
+$$
+\mu = \lim_{ n \to \infty } \left\{  -\frac{\log|a_{n}|}{n}  \right\}
+$$
+Pour ressumer, sur un graphique des coefficients de Fourier, on a:![[ordreConvergence.png]]
+Si les coefficients oscillent, on peut definir l'enveloppe des coefficients comme etant la courbe qui borne le plus pres les termes des coefficients non nuls.
