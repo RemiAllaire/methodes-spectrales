@@ -78,6 +78,7 @@ k \quad \text{geometrique} \\
 $$
 En general, les fonctions entieres ont une convergence supergeometrique. Les fonctions ayant des singlularites ou des poles sont geometriques (r=1).
 
+#### Taux asymptotique 
 Si une fonction a une convergence geometrique, son taux asymptotique $\mu$ est
 $$
 a_{n}\sim []e^{-n\mu}
@@ -163,3 +164,113 @@ Si la fonction est régulière (périodique) pour tout k,  on obtient la converg
 #### C'est pourquoi on utilise les polynômes de Tchebychev sur les problèmes non-périodique, et Fourier sur périodique.
 
 Par exemple, étudions la solution de 
+$$
+u_{x x}+Q(x)u = f(x) \quad u(0)=u(\pi)=0
+$$
+Les conditions aux frontières n'imposent pas de solutions périodiques. Il serait judicieux de travailler avec les polynômes de Tchebychev, mais continuons avec Fourier pour illustrer ce que produit un mauvais choix de base.
+
+Vu que $u(0) = 0$, il se doit que les coefficients $a_{n}$ qui dépendent de $\cos(nx)$ soient tous nuls. Ainsi, on cherche une solution de la forme
+$$
+u(x) = \sum_{k=1}^{\infty}b_{n}\sin(nx)
+$$
+$$
+b_{n}=\frac{2}{\pi}\int_{0}^{\pi}u(x)\sin(nx) \, dx
+$$
+par partie:
+$$
+\begin{align}
+b_{n} & = \left[ -\frac{2}{n\pi}u(x)\cos(nx) \right]_{0}^{\pi}+\frac{1}{n}\frac{2}{\pi}\int_{0}^{\pi}u'(x)\cos(nx)\,dx \\
+ & =\frac{1}{n} \frac{2}{\pi}\int_{0}^{\pi}u'(x)\cos(nx) \,dx \\
+ & =\left[ \frac{1}{n^{2}} \frac{2}{\pi}u'(x)\sin(nx) \right]_{0}^{\pi}-\frac{1}{n^{2}} \frac{2}{\pi}\int_{0}^{\pi}u''(x)\sin(nx) \,dx \\
+ & = -\frac{1}{n^{2}} \frac{2}{\pi}\int_{0}^{\pi}u''(x)\sin(nx) \, dx  \\
+ & =\frac{1}{n^{3}} \frac{2}{\pi}[u''(x)\cos(nx)]_{0}^{\pi}-\frac{1}{n^{3}} \frac{2}{\pi}\int_{0}^{\pi}u^{(3)}(x)\cos(nx) \, dx \\
+ & =O\left( \frac{1}{n^{3}} \right)
+\end{align}
+
+$$
+On ne peut pas garantir que $u''(0)=u''(\pi). Ainsi on garantit au moins une convergence d'ordre 3. On remarque que $f(0)=u''(0)$ et $f(\pi) = u''(\pi)$. Ainsi, si $f(0)=f(\pi)$, on arrive a une convergence d'ordre 5.
+
+Ce genre de technique d'intégration par partie peut être aussi effectué pour d'autres bases spectrales.
+
+### Convergence asymptotique: Séries de Fourier
+Soit $z_{i} = x +iy$, une  des singularité de $f$ (qui inclut aussi les discontinuité périodique ici). On note
+$$
+\rho = min|\mathrm{Im}(z_{i})|
+$$
+Ça correspond à la plus petite distance verticale à l'axe des réels de la singularité sur le plan complexe.
+La forme complexe des Fourier (sur plan complexe) s'écrit:
+$$
+\begin{align}
+f(z)  & = \sum_{n=-\infty}^{\infty}c_{n}e^{-inz} \\
+ & = \sum_{n=-\infty}^{\infty}c_{n}e^{-inx}e^{ny}
+\end{align}
+
+$$
+Clairement pour les $n$ négatifs, les y négatifs font exploser la série, et $n$ positifs, y positif fait exploser. Ainsi, faut que $c_{n}$ converge plus rapidement que $e^{ny}$ explose.
+[Je ne comprend pas vraiment la justification ici]:
+Ainsi, si il y a un pole à $y = \rho$, les termes $c_{n}$ ne pourront pas converger plus rapidement que $e^{n\rho}$. Ainsi, on obtient la convergence exponentielle (de taux $\rho$?) de la série spectrale sur une bande le long de l'axe réel d'une épaisseur de $2\rho$.
+*Si la série possède une convergence algébrique, cela implique $\rho =0$, la série de Fourier ne converge que sur les réels* 
+
+## Convergence asymptotique: Tchebychev
+
+Les polynômes de Tchebychev sont défini comme:
+$$
+T_{n}(\cos \theta)= \cos(n\theta)
+$$
+Ainsi son développement spectral équivaut au développement de Fourier avec un changement de variable
+$$
+f(z) = \sum_{n=0}^{\infty}a_{n}T_{n}(z)
+$$
+$$
+f(\cos(\theta)) = \sum_{n=0}^{\infty}a_{n}\cos(n\theta)
+$$
+On remarque que $f(\cos \theta)$ est périodique de $[-\pi,\pi]$. Par le théorème sur la régularité et la convergence des coefficients de Fourier, on obtient une convergence exponentielle (pourvu qu'il n'il y a pas de singularité entre z=-1 et z =1, c'est pas grave s'il y en a à l'extérieur).
+
+### Erreur de troncature
+
+$$
+E_{T}(N)(x) = \sum_{n=N+1}^{\infty}|a_{n}T_{n}(x)|
+$$
+Mais vu que $T_{n}(x) \in [-1,1]$,
+$$
+E_{T}(N)(x) \leq \sum_{n=N+1}^{\infty}|a_{n}|
+$$
+#### Coordonnées elliptique
+$$
+\begin{align}
+x & = \cosh \mu \cos \eta   \\
+y & = \sinh \mu \sin \eta
+\end{align}
+$$
+$\mu \in  [0,\infty]$, $\eta =[0,2\pi]$. La trajectoire pour $\mu$ constant est une ellipse avec foyer $z= \pm 1$. La série spectrales converge pour la plus grand ellipse de paramètre $\mu$ ne contenant pas de singularité. La convergence est exponentielle. Cependant, si $\mu=0$, la convergence est seulement sur $[-1,1]$ et la convergence est subgéométrique ou algébrique
+
+À cause de l'effet où l'ellipse stretch, un singularité très près de x = 1, peut définir la même ellipse qu'une singularité loin sur l'axe imaginaire.
+
+Le taux de convergence asymptotique (géométrique) est $\mu$. Si le domaine de convergence est limité par la singularité $z_{0}=x_{0}+iy_{0}$ , alors
+$$
+\begin{align}
+\mu  & = \mathrm{Im}\arccos(x_{0}+iy_{0})  \\
+ & =
+\end{align}
+
+$$
+
+### Troncation pour séries de Fourier
+C'est similaire à Tchebychev, vu que $\cos nx,\sin nx$ sont bornés par 1. On a
+$$
+\begin{align}
+E_{T}(N)(x) \leq \sum_{n=N_{6}6+1}^{\infty}|a_{n}|+|b_{n}
+\end{align}
+
+
+$$
+#### Règle pouce 2:
+On estime l'erreur de troncature à partir de l'ordre du dernier coefficient estimé.
+Ainsi,
+$$
+E_{T}(N)(x) \sim O(|a_{N}|), O(N|a_{N}|) \, \text{ si algébrique}
+$$
+
+#### Règle pouce 3:
+
+Si la solution oscille, soit M sa longueur d'onde, il faut environ 3.5 N (ou polynome) pour bien capter les fluctuations et arriver à une convergence spectrale avec 1% d'erreur.
