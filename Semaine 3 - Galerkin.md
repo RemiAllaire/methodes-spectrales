@@ -81,14 +81,12 @@ $$
 On peut exploiter la propriété des polynômes d'Hermite
 
 $$
-\int_{-\infty}^{\infty} H_{n}H_{m} e^{-x^{2}} \, dx = 2^{n}n!\sqrt{ \pi }\delta_{nm} 
+\begin{aligned}
+\int_{-\infty}^{\infty} H_{n}H_{m} e^{-x^{2}} \, dx &= 2^{n}n!\sqrt{ \pi }\delta_{nm} \\
+\int_{-\infty}^{\infty} \varphi_{n}\varphi_{m} \, dx&= \delta_{nm} 
+\end{aligned}
 $$
 
-Ainsi,
-
-$$
-\int_{-\infty}^{\infty} \varphi_{n}\varphi_{m} \, dx= \delta_{nm} 
-$$
 
 ### Calcul analytique
 #### Effet du hamiltonien
@@ -107,7 +105,7 @@ $$
 \begin{aligned}
 (N_{i}e^{-(z)^{2}}H_{i}(z))' & = N_{i}(-\beta ze^{-z^{2}/2}H_{i}(z)+\beta e^{-z^{2}/2}H'_{i}(z)) \\
  & =N_{i}\beta e^{-z^{2}/2}(H'_{i}(z)-zH_{i}(z)) \\
-[N_{i}e^{-z^{2}}H_{i}(z)]'' & = \beta^{2}N_{i}​e^{−z^{2}/2}[H_{i}''​(z)−2zH_{i}'​(z)+(z^{2}−1)H_{i}​(z)]
+\left[N_{i}e^{-z^{2}}H_{i}(z)\right]'' & = \beta^{2}N_{i}​e^{−z^{2}/2}\left[H_{i}''​(z)−2zH_{i}'​(z)+(z^{2}−1)H_{i}​(z)\right]
 \end{aligned}
 $$
 
@@ -151,12 +149,12 @@ $$
 xH_{n}(x)+ \frac{1}{2}H_{n+1}(x)+nH_{n-1}(x)
 $$
 
-On peut aussi l'appliquer aux fonctions d'Hermite généralisées pour aboutir à
+On peut aussi l'appliquer aux fonctions d'Hermite  ($\beta =1$) pour aboutir à
 
 $$
-x\varphi_{n}= \sqrt{ \frac{n}{2} }\varphi_{n-1}+\sqrt{ \frac{n+1}{2} }\varphi_{n+1}
+x\psi_{n}(x)= \sqrt{ \frac{n}{2} }\psi_{n-1}(x)+\sqrt{ \frac{n+1}{2} }\psi_{n+1}(x)
 $$
-
+Comme les fonctions d'Hermite généralisées peuvent s'écrire comme $\varphi_{n}^{\beta}(x) =\frac{1}{\sqrt{ \beta }}\psi(\beta x)$
 On a
 
 $$

@@ -208,28 +208,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c24c82c030487e59",
+  "active": "f42a2c3bdb5b5989",
   "lastOpenFiles": [
-    "Galerkin.tex--template=default",
-    "Galerkin.tex",
+    "Galerkin.out",
+    "Galerkin.synctex(busy)",
+    "Galerkin.log",
+    "Galerkin.fls",
+    "pdflatex8682.fls",
+    "pdflatex8678.fls",
+    "pdflatex8636.fls",
+    "Galerkin.synctex.gz",
+    "Galerkin.pdf",
+    "pdflatex8632.fls",
+    "Galerkin.fdb_latexmk",
     "Notes/Semaine 2 - Chapitre 3.md",
     "README.md",
     "Semaine 3 - Galerkin.md",
     "Notes/Semaine 2 - Chapitre 2.md",
     "Notes/Semaine 1 - Introduction.md",
-    "Semaine2/galerkin1.asv",
-    "Semaine2/galerkin1.mlx",
     "Notes/images/ordreConvergence.png",
-    "Semaine2/SerieFourier.m",
-    "Semaine2/SerieFourier.asv",
     "Notes/images/FourierX.png",
     "Notes/FourierX.png",
     "FourierX.png",
-    "Semaine2/untitled.mlx",
-    "Semaine2/Copy_of_SerieFourier.m",
-    "Semaine2/Copy_of_SerieFourier.mlx",
     "Notes/image 1.md",
-    "Semaine1/uexact_vs_u2.png",
-    "Semaine1/exemple1.pdf"
+    "Semaine1/uexact_vs_u2.png"
   ]
 }

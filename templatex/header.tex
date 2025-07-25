@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+
+% Encodage & langue
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+
+% Mise en page
+\usepackage[margin=3cm]{geometry}
+\usepackage{indentfirst}
+
+% Maths
+\usepackage{amsmath, amssymb, amsthm, mathtools, stmaryrd}
+
+% Graphiques & figures
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{diagbox}
+
+% Hyperliens
+\usepackage{hyperref}
+
+% Code source
+\usepackage{listings}
+\usepackage{xcolor}  % requis pour definecolor
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  language=C++, % attention à ne pas doubler les virgules
+  frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  literate=
+    {é}{{\'e}}1 {ë}{{\"{e}}}1 {è}{{\`e}}1 {à}{{\`a}}1 {ç}{{\c{c}}}1
+    {œ}{{\oe}}1 {ù}{{\`u}}1 {É}{{\'E}}1 {È}{{\`E}}1 {À}{{\`A}}1 {Ç}{{\c{C}}}1
+    {Œ}{{\OE}}1 {Ê}{{\^E}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1
+    {û}{{\^u}}1 {â}{{\^a}}1 {Â}{{\^A}}1 {Î}{{\^I}}1
+}
+
+% Listes
+\usepackage[shortlabels]{enumitem}
+
+% Théorèmes
+\newtheorem{theorem}{Théorème}[section]
+\newtheorem{lemma}[theorem]{Lemme}
+\newtheorem{corollary}[theorem]{Corollaire}
+
+% Table des matières
+\usepackage{tocloft}
+
+% En-têtes et pieds de page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{}
+\cfoot{}
+
+% Commentaires en bloc
+\usepackage{comment}

@@ -1,59 +1,88 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
-%
-\documentclass[
-]{article}
-\usepackage{amsmath,amssymb}
-\usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
-\fi
-% Use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{xcolor}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
-\hypersetup{
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
+\documentclass[11pt]{article}
 
-\author{}
-\date{}
+% Encodage & langue
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+
+% Mise en page
+\usepackage[margin=3cm]{geometry}
+\usepackage{indentfirst}
+
+% Maths
+\usepackage{amsmath, amssymb, amsthm, mathtools, stmaryrd}
+
+% Graphiques & figures
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{diagbox}
+
+% Hyperliens
+\usepackage{hyperref}
+
+% Code source
+\usepackage{listings}
+\usepackage{xcolor}  % requis pour definecolor
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  language=C++, % attention à ne pas doubler les virgules
+  frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3,
+  literate=
+    {é}{{\'e}}1 {ë}{{\"{e}}}1 {è}{{\`e}}1 {à}{{\`a}}1 {ç}{{\c{c}}}1
+    {œ}{{\oe}}1 {ù}{{\`u}}1 {É}{{\'E}}1 {È}{{\`E}}1 {À}{{\`A}}1 {Ç}{{\c{C}}}1
+    {Œ}{{\OE}}1 {Ê}{{\^E}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1
+    {û}{{\^u}}1 {â}{{\^a}}1 {Â}{{\^A}}1 {Î}{{\^I}}1
+}
+
+% Listes
+\usepackage[shortlabels]{enumitem}
+
+% Théorèmes
+\newtheorem{theorem}{Théorème}[section]
+\newtheorem{lemma}[theorem]{Lemme}
+\newtheorem{corollary}[theorem]{Corollaire}
+
+% Table des matières
+\usepackage{tocloft}
+
+% En-têtes et pieds de page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\lhead{}
+\cfoot{}
+
+% Commentaires en bloc
+\usepackage{comment}
+
+\title{title}
+\author{Remi}
+\date{2025}
 
 \begin{document}
+
+\maketitle
 
 \hypertarget{comment-ruxe9soudre-probluxe8me-de-valeurs-propres-avec-galerkin.}{%
 \subsection{Comment résoudre problème de valeurs propres avec
@@ -133,8 +162,6 @@ On peut exploiter la propriété des polynômes d'Hermite
 \int_{-\infty}^{\infty} H_{n}H_{m} e^{-x^{2}} \, dx = 2^{n}n!\sqrt{ \pi }\delta_{nm} 
 \]
 
-Ainsi,
-
 \[
 \int_{-\infty}^{\infty} \varphi_{n}\varphi_{m} \, dx= \delta_{nm} 
 \]
@@ -160,7 +187,7 @@ Commençons par les dérivées de \(\varphi_{i}\). On pose
 \begin{aligned}
 (N_{i}e^{-(z)^{2}}H_{i}(z))' & = N_{i}(-\beta ze^{-z^{2}/2}H_{i}(z)+\beta e^{-z^{2}/2}H'_{i}(z)) \\
  & =N_{i}\beta e^{-z^{2}/2}(H'_{i}(z)-zH_{i}(z)) \\
-[N_{i}e^{-z^{2}}H_{i}(z)]'' & = \beta^{2}N_{i}​e^{−z^{2}/2}[H_{i}''​(z)−2zH_{i}'​(z)+(z^{2}−1)H_{i}​(z)]
+\left[N_{i}e^{-z^{2}}H_{i}(z)\right]'' & = \beta^{2}N_{i}​e^{−z^{2}/2}\left[H_{i}''​(z)−2zH_{i}'​(z)+(z^{2}−1)H_{i}​(z)\right]
 \end{aligned}
 \]
 
@@ -207,14 +234,13 @@ On a
 xH_{n}(x)+ \frac{1}{2}H_{n+1}(x)+nH_{n-1}(x)
 \]
 
-On peut aussi l'appliquer aux fonctions d'Hermite généralisées pour
+On peut aussi l'appliquer aux fonctions d'Hermite (\(\beta =1\)) pour
 aboutir à
 
 \[
-x\varphi_{n}= \sqrt{ \frac{n}{2} }\varphi_{n-1}+\sqrt{ \frac{n+1}{2} }\varphi_{n+1}
-\]
-
-On a
+x\psi_{n}(x)= \sqrt{ \frac{n}{2} }\psi_{n-1}(x)+\sqrt{ \frac{n+1}{2} }\psi_{n+1}(x)
+\] Comme les fonctions d'Hermite généralisées peuvent s'écrire comme
+\(\varphi_{n}^{\beta}(x) =\frac{1}{\sqrt{ \beta }}\psi(\beta x)\) On a
 
 \[
 \begin{align}
