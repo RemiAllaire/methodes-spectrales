@@ -56,7 +56,7 @@
 \begin{document}
 
 \hypertarget{comment-ruxe9soudre-probluxe8me-de-valeurs-propres-avec-galerkin.}{%
-\subsubsection{Comment résoudre problème de valeurs propres avec
+\subsection{Comment résoudre problème de valeurs propres avec
 Galerkin.}\label{comment-ruxe9soudre-probluxe8me-de-valeurs-propres-avec-galerkin.}}
 
 Soit \(H\), l'opérateur Hamiltonien, on veut résoudre l'équation de
@@ -84,26 +84,46 @@ A_{ij} =(\phi_{i},H\phi_{j}-E\phi_{j})
 \]
 
 \hypertarget{thuxe9orie-uxe9quation-de-schruxf6dinger-en-1d}{%
-\subsubsection{Théorie équation de Schrödinger en
+\subsection{Théorie équation de Schrödinger en
 1D}\label{thuxe9orie-uxe9quation-de-schruxf6dinger-en-1d}}
 
-L'équation de Schrödinger en 1 dimension \[
+L'équation de Schrödinger en 1 dimension
+
+\[
 H\psi=E\psi
 \] où \(H\) est le Hamiltonien défini avec un potentiel \(V(x)\) comme
+
 \[
+\begin{aligned}
 H = -\frac{1}{2} \frac{d^{2}}{dx^{2}} +V(x)
-\] On étudie dans notre cas, on étudie l'oscillateur harmonique
-quantique, ainsi \$\$ H = -\frac{1}{2} \frac{d^{2}}{dx^{2}} +
-\frac{1}{2}x\^{}\{2\}
+\end{aligned}
+\]
+
+On étudie dans notre cas, on étudie l'oscillateur harmonique quantique,
+ainsi
 
 \[
-Les états propres, à paramètre près sont
-\] E\_\{n\}=n+\frac{1}{2} \[
-Les fonctions propres sont les fonctions d’Hermite généralisés.
-\] \psi\emph{\{n\}(x)=
-\frac{e^{x^{2}/2}}{\sqrt{2^{n}n!\sqrt{ \pi }  }}H}\{n\}(x) \$\$
+H = -\frac{1}{2} \frac{d^{2}}{dx^{2}} + \frac{1}{2}x^{2}
+\]
 
-Travaillons avec une légère modification comme fonction de base \[
+Les états propres, à paramètre près sont
+
+\[
+E_{n}=n+\frac{1}{2}
+\]
+
+\hypertarget{fonctions-propres}{%
+\subsubsection{Fonctions propres}\label{fonctions-propres}}
+
+Les fonctions propres sont les fonctions d'Hermite généralisés.
+
+\[
+\psi_{n}(x)= \frac{e^{x^{2}/2}}{\sqrt{2^{n}n!\sqrt{ \pi }  }}H_{n}(x)
+\]
+
+Travaillons avec une légère modification comme fonction de base
+
+\[
 \varphi_{n}(x)= \frac{e^{-(\beta x)^{2}/2}}{\sqrt{\beta2^{n}n!\sqrt{ \pi }  }}H_{n}(\beta x)
 \]
 
@@ -111,47 +131,96 @@ On peut exploiter la propriété des polynômes d'Hermite
 
 \[
 \int_{-\infty}^{\infty} H_{n}H_{m} e^{-x^{2}} \, dx = 2^{n}n!\sqrt{ \pi }\delta_{nm} 
-\] Ainsi, \[
+\]
+
+Ainsi,
+
+\[
 \int_{-\infty}^{\infty} \varphi_{n}\varphi_{m} \, dx= \delta_{nm} 
 \]
 
+\hypertarget{calcul-analytique}{%
+\subsubsection{Calcul analytique}\label{calcul-analytique}}
+
+\hypertarget{effet-du-hamiltonien}{%
+\paragraph{Effet du hamiltonien}\label{effet-du-hamiltonien}}
+
 On veut calculer \[
-\begin{align}
+\begin{aligned}
 (\varphi_{i},H\varphi_{j}-E\varphi_{j})  & =(\varphi_{i},H\varphi_{j})-(\varphi_{i},E\varphi_{j}) \\
  & =(\varphi_{i},H\varphi_{j})-E\delta _{ij}
-\end{align}
-\] Commençons par les dérivées de \(\varphi_{i}\). On pose
+\end{aligned}
+\]
+
+Commençons par les dérivées de \(\varphi_{i}\). On pose
 \(N_{i}=\frac{1}{\sqrt{ \beta_{2}^{i}i!\sqrt{ \pi } }}\) et
-\(z = \beta x\) \$\$ \begin{align}
-[N_{i}e^{-(z)^{2}}H_{i}(z)]' & =N_{i}(-\beta ze^{-z^{2}/2}H_{i}(z)+\beta e^{-z^{2}/2}H'_{i}(z)) \\
+\(z = \beta x\)
+
+\[
+\begin{aligned}
+(N_{i}e^{-(z)^{2}}H_{i}(z))' & = N_{i}(-\beta ze^{-z^{2}/2}H_{i}(z)+\beta e^{-z^{2}/2}H'_{i}(z)) \\
  & =N_{i}\beta e^{-z^{2}/2}(H'_{i}(z)-zH_{i}(z)) \\
-[N_{i}e^{-z^{2}}H_{i}(z)]'' & = β^{2}N_{i}​e^{−z^{2}/2}[H_{i}''​(z)−2zH_{i}'​(z)+(z^{2}−1)H_{i}​(z)]
-\end{align}
+[N_{i}e^{-z^{2}}H_{i}(z)]'' & = \beta^{2}N_{i}​e^{−z^{2}/2}[H_{i}''​(z)−2zH_{i}'​(z)+(z^{2}−1)H_{i}​(z)]
+\end{aligned}
+\]
 
-\[
 Avec l'identité
-\] H'`\emph{\{n\}(z)=2zH}\{n\}'(z)-2nH\_\{n\}(z) \[
-On abouti à
-\]
-\varphi\emph{\{i\}'\,'=\beta\textsuperscript{\{2\}N\_\{i\}e}\{-z\textsuperscript{\{2\}/2\}(z}\{2\}-2n-1)H}\{i\}(z)
+
 \[
+H''_{n}(z)=2zH_{n}'(z)-2nH_{n}(z)
 \]
-\varphi\emph{\{i\}'\,'=\beta\textsuperscript{\{2\}(\beta}\{2\}x\^{}\{2\}-2n-1)\varphi}\{i\}
-\$\$
 
-On a \$\$ \begin{align}
-H\varphi_{j} & = -\frac{1}{2} \frac{d^{2}\varphi_{j}}{dx^{2}} + \frac{1}{2}x^{2}\varphi_{j} \\
-&=-\frac{1}{2}\beta^{2}((\beta^{2}-1)x^{2}-2n-1)\varphi_{i} \\
-&= \frac{1}{2}((1-\beta^{4})x^{2}+\beta^{2}(1+2n))\varphi_{i}
+On abouti à
 
+\[
+\varphi_{i}''=\beta^{2}N_{i}e^{-z^{2}/2}(z^{2}-2i-1)H_{i}(z)
+\]
 
-\end{align} \[
+\[
+\varphi_{i}''=\beta^{2}(\beta^{2}x^{2}-2i-1)\varphi_{i}
+\]
+
 On a
-\] \begin{align}
+
+\[
+\begin{aligned}
+H\varphi_{j} & = -\frac{1}{2} \frac{d^{2}\varphi_{j}}{dx^{2}} + \frac{1}{2}x^{2}\varphi_{j} \\
+&=-\frac{1}{2}\beta^{2}((\beta^{2}-1)x^{2}-2j-1)\varphi_{j} \\
+&= \frac{1}{2}((1-\beta^{4})x^{2}+\beta^{2}(1+2j))\varphi_{j}
+\end{aligned}
+\]
+
+\hypertarget{calcul-de-lintuxe9grale}{%
+\paragraph{Calcul de l'intégrale}\label{calcul-de-lintuxe9grale}}
+
+Le calcul analytique du Hamiltonien permet de calculer analytiquement
+les intégrales de la méthode de Galerkin. On exploite l'orthonormalité
+des fonctions de bases. Cependant, on doit travailler un peu pour le
+terme multiplié par \(x^{2}\).
+
+\hypertarget{identituxe9}{%
+\paragraph{Identité}\label{identituxe9}}
+
+On a
+
+\[
+xH_{n}(x)+ \frac{1}{2}H_{n+1}(x)+nH_{n-1}(x)
+\]
+
+On peut aussi l'appliquer aux fonctions d'Hermite généralisées pour
+aboutir à
+
+\[
+x\varphi_{n}= \sqrt{ \frac{n}{2} }\varphi_{n-1}+\sqrt{ \frac{n+1}{2} }\varphi_{n+1}
+\]
+
+On a
+
+\[
+\begin{align}
 (\varphi_{i},H\varphi_{j}) & =\int_{-\infty}^{\infty} \varphi_{i}H\varphi_{j} \, dx  \\
-
+&=\frac{1}{2} (1-\beta^{4})\int_{-\infty}^{\infty} \varphi_{i}\varphi_{j}x^{2} \, dx + \frac{1}{2}\beta^{2}(1+2j)\delta_{ij} 
 \end{align}
-
-\$\$
+\]
 
 \end{document}

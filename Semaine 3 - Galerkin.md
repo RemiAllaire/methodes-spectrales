@@ -38,30 +38,42 @@ $$
 ##  Théorie équation de Schrödinger en 1D
 
 L'équation de Schrödinger en 1 dimension
+
 $$
 H\psi=E\psi
 $$
 où $H$ est le Hamiltonien défini avec un potentiel $V(x)$ comme
-$$
-H = -\frac{1}{2} \frac{d^{2}}{dx^{2}} +V(x)
-$$
-On étudie dans notre cas, on étudie l'oscillateur harmonique quantique, ainsi
-$$
-H = -\frac{1}{2} \frac{d^{2}}{dx^{2}} + \frac{1}{2}x^{2}
 
 $$
+\begin{aligned}
+H = -\frac{1}{2} \frac{d^{2}}{dx^{2}} +V(x)
+\end{aligned}
+$$
+
+
+On étudie dans notre cas, on étudie l'oscillateur harmonique quantique, ainsi
+
+$$
+H = -\frac{1}{2} \frac{d^{2}}{dx^{2}} + \frac{1}{2}x^{2}
+$$
+
 Les états propres, à paramètre près sont
+
 $$
 E_{n}=n+\frac{1}{2}
 $$
+
+
 ### Fonctions propres
 
 Les fonctions propres sont les fonctions d’Hermite généralisés.
+
 $$
 \psi_{n}(x)= \frac{e^{x^{2}/2}}{\sqrt{2^{n}n!\sqrt{ \pi }  }}H_{n}(x)
 $$
 
 Travaillons avec une légère modification comme fonction de base
+
 $$
 \varphi_{n}(x)= \frac{e^{-(\beta x)^{2}/2}}{\sqrt{\beta2^{n}n!\sqrt{ \pi }  }}H_{n}(\beta x)
 $$
@@ -71,37 +83,47 @@ On peut exploiter la propriété des polynômes d'Hermite
 $$
 \int_{-\infty}^{\infty} H_{n}H_{m} e^{-x^{2}} \, dx = 2^{n}n!\sqrt{ \pi }\delta_{nm} 
 $$
+
 Ainsi,
+
 $$
 \int_{-\infty}^{\infty} \varphi_{n}\varphi_{m} \, dx= \delta_{nm} 
 $$
+
 ### Calcul analytique
 #### Effet du hamiltonien
 
 On veut calculer
 $$
-\begin{align}
+\begin{aligned}
 (\varphi_{i},H\varphi_{j}-E\varphi_{j})  & =(\varphi_{i},H\varphi_{j})-(\varphi_{i},E\varphi_{j}) \\
  & =(\varphi_{i},H\varphi_{j})-E\delta _{ij}
-\end{align}
+\end{aligned}
 $$
+
 Commençons par les dérivées de $\varphi_{i}$. On pose $N_{i}=\frac{1}{\sqrt{ \beta_{2}^{i}i!\sqrt{ \pi } }}$ et $z = \beta x$
-$$
-\begin{align}
-[N_{i}e^{-(z)^{2}}H_{i}(z)]' & =N_{i}(-\beta ze^{-z^{2}/2}H_{i}(z)+\beta e^{-z^{2}/2}H'_{i}(z)) \\
- & =N_{i}\beta e^{-z^{2}/2}(H'_{i}(z)-zH_{i}(z)) \\
-[N_{i}e^{-z^{2}}H_{i}(z)]'' & = β^{2}N_{i}​e^{−z^{2}/2}[H_{i}''​(z)−2zH_{i}'​(z)+(z^{2}−1)H_{i}​(z)]
-\end{align}
 
 $$
+\begin{aligned}
+(N_{i}e^{-(z)^{2}}H_{i}(z))' & = N_{i}(-\beta ze^{-z^{2}/2}H_{i}(z)+\beta e^{-z^{2}/2}H'_{i}(z)) \\
+ & =N_{i}\beta e^{-z^{2}/2}(H'_{i}(z)-zH_{i}(z)) \\
+[N_{i}e^{-z^{2}}H_{i}(z)]'' & = \beta^{2}N_{i}​e^{−z^{2}/2}[H_{i}''​(z)−2zH_{i}'​(z)+(z^{2}−1)H_{i}​(z)]
+\end{aligned}
+$$
+
+
 Avec l'identité
+
 $$
 H''_{n}(z)=2zH_{n}'(z)-2nH_{n}(z)
 $$
+
 On abouti à
+
 $$
 \varphi_{i}''=\beta^{2}N_{i}e^{-z^{2}/2}(z^{2}-2i-1)H_{i}(z)
 $$
+
 $$
 \varphi_{i}''=\beta^{2}(\beta^{2}x^{2}-2i-1)\varphi_{i}
 $$
@@ -109,22 +131,38 @@ $$
 
 
 On a 
+
 $$
-\begin{align}
+\begin{aligned}
 H\varphi_{j} & = -\frac{1}{2} \frac{d^{2}\varphi_{j}}{dx^{2}} + \frac{1}{2}x^{2}\varphi_{j} \\
 &=-\frac{1}{2}\beta^{2}((\beta^{2}-1)x^{2}-2j-1)\varphi_{j} \\
 &= \frac{1}{2}((1-\beta^{4})x^{2}+\beta^{2}(1+2j))\varphi_{j}
-
-
-\end{align}
+\end{aligned}
 $$
+
 #### Calcul de l'intégrale
+Le calcul analytique du Hamiltonien permet de calculer analytiquement les intégrales de la méthode de Galerkin. On exploite l'orthonormalité des fonctions de bases. Cependant, on doit travailler un peu pour le terme multiplié par $x^{2}$.
+
+#### Identité
+
+On a 
+
+$$
+xH_{n}(x)+ \frac{1}{2}H_{n+1}(x)+nH_{n-1}(x)
+$$
+
+On peut aussi l'appliquer aux fonctions d'Hermite généralisées pour aboutir à
+
+$$
+x\varphi_{n}= \sqrt{ \frac{n}{2} }\varphi_{n-1}+\sqrt{ \frac{n+1}{2} }\varphi_{n+1}
+$$
 
 On a
+
 $$
 \begin{align}
 (\varphi_{i},H\varphi_{j}) & =\int_{-\infty}^{\infty} \varphi_{i}H\varphi_{j} \, dx  \\
-
+&=\frac{1}{2} (1-\beta^{4})\int_{-\infty}^{\infty} \varphi_{i}\varphi_{j}x^{2} \, dx + \frac{1}{2}\beta^{2}(1+2j)\delta_{ij} 
 \end{align}
-
 $$
+
