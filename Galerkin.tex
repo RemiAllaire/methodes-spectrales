@@ -1,0 +1,157 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{comment-ruxe9soudre-probluxe8me-de-valeurs-propres-avec-galerkin.}{%
+\subsubsection{Comment résoudre problème de valeurs propres avec
+Galerkin.}\label{comment-ruxe9soudre-probluxe8me-de-valeurs-propres-avec-galerkin.}}
+
+Soit \(H\), l'opérateur Hamiltonien, on veut résoudre l'équation de
+Schrödinger. \[
+H\psi = E\psi
+\] Soit \(\phi_{i}\), les fonctions test et de base (orthonormale,
+\textasciitilde complete). On cherche une solution \(\psi _N\) de la
+forme \[
+\psi_{N} = \sum_{n=0}^{N}c_{n}\phi_{n}
+\] On souhaite minimiser l'équation résiduelle \[
+R(x) = H\psi_{N}-E\psi_{N}
+\] Le développement spectral de l'équation résiduelle \[
+R =\sum_{n=0}^{N}r_{n}\phi_{n}
+\] Par orthogonalité, on obtient \[
+r_{n} =(\phi_{n},R)
+\] En utilisant la méthode de Galerkin, on imposant
+\(r_{n}= 0, \quad n= 0,\dots,N\), on peut simplifier \[
+(\phi_{i},H\phi_{j}-E\phi_{j})(a_{i}) = (0)
+\] Cela donne une équation homogène. On cherche les solutions
+non-triviales afin de calculer les niveaux d'énergie (valeurs propres).
+En posant, \[
+A_{ij} =(\phi_{i},H\phi_{j}-E\phi_{j}) 
+\] on cherche E tel que \[
+\det(A) = 0
+\]
+
+\hypertarget{thuxe9orie-uxe9quation-de-schruxf6dinger-en-1d}{%
+\subsubsection{Théorie équation de Schrödinger en
+1D}\label{thuxe9orie-uxe9quation-de-schruxf6dinger-en-1d}}
+
+L'équation de Schrödinger en 1 dimension \[
+H\psi=E\psi
+\] où \(H\) est le Hamiltonien défini avec un potentiel \(V(x)\) comme
+\[
+H = -\frac{1}{2} \frac{d^{2}}{dx^{2}} +V(x)
+\] On étudie dans notre cas, on étudie l'oscillateur harmonique
+quantique, ainsi \$\$ H = -\frac{1}{2} \frac{d^{2}}{dx^{2}} +
+\frac{1}{2}x\^{}\{2\}
+
+\[
+Les états propres, à paramètre près sont
+\] E\_\{n\}=n+\frac{1}{2} \[
+Les fonctions propres sont les fonctions d’Hermite généralisés.
+\] \psi\emph{\{n\}(x)=
+\frac{e^{x^{2}/2}}{\sqrt{2^{n}n!\sqrt{ \pi }  }}H}\{n\}(x) \$\$
+
+Travaillons avec une légère modification comme fonction de base \[
+\varphi_{n}(x)= \frac{e^{-(\beta x)^{2}/2}}{\sqrt{\beta2^{n}n!\sqrt{ \pi }  }}H_{n}(\beta x)
+\]
+
+On peut exploiter la propriété des polynômes d'Hermite
+
+\[
+\int_{-\infty}^{\infty} H_{n}H_{m} e^{-x^{2}} \, dx = 2^{n}n!\sqrt{ \pi }\delta_{nm} 
+\] Ainsi, \[
+\int_{-\infty}^{\infty} \varphi_{n}\varphi_{m} \, dx= \delta_{nm} 
+\]
+
+On veut calculer \[
+\begin{align}
+(\varphi_{i},H\varphi_{j}-E\varphi_{j})  & =(\varphi_{i},H\varphi_{j})-(\varphi_{i},E\varphi_{j}) \\
+ & =(\varphi_{i},H\varphi_{j})-E\delta _{ij}
+\end{align}
+\] Commençons par les dérivées de \(\varphi_{i}\). On pose
+\(N_{i}=\frac{1}{\sqrt{ \beta_{2}^{i}i!\sqrt{ \pi } }}\) et
+\(z = \beta x\) \$\$ \begin{align}
+[N_{i}e^{-(z)^{2}}H_{i}(z)]' & =N_{i}(-\beta ze^{-z^{2}/2}H_{i}(z)+\beta e^{-z^{2}/2}H'_{i}(z)) \\
+ & =N_{i}\beta e^{-z^{2}/2}(H'_{i}(z)-zH_{i}(z)) \\
+[N_{i}e^{-z^{2}}H_{i}(z)]'' & = β^{2}N_{i}​e^{−z^{2}/2}[H_{i}''​(z)−2zH_{i}'​(z)+(z^{2}−1)H_{i}​(z)]
+\end{align}
+
+\[
+Avec l'identité
+\] H'`\emph{\{n\}(z)=2zH}\{n\}'(z)-2nH\_\{n\}(z) \[
+On abouti à
+\]
+\varphi\emph{\{i\}'\,'=\beta\textsuperscript{\{2\}N\_\{i\}e}\{-z\textsuperscript{\{2\}/2\}(z}\{2\}-2n-1)H}\{i\}(z)
+\[
+\]
+\varphi\emph{\{i\}'\,'=\beta\textsuperscript{\{2\}(\beta}\{2\}x\^{}\{2\}-2n-1)\varphi}\{i\}
+\$\$
+
+On a \$\$ \begin{align}
+H\varphi_{j} & = -\frac{1}{2} \frac{d^{2}\varphi_{j}}{dx^{2}} + \frac{1}{2}x^{2}\varphi_{j} \\
+&=-\frac{1}{2}\beta^{2}((\beta^{2}-1)x^{2}-2n-1)\varphi_{i} \\
+&= \frac{1}{2}((1-\beta^{4})x^{2}+\beta^{2}(1+2n))\varphi_{i}
+
+
+\end{align} \[
+On a
+\] \begin{align}
+(\varphi_{i},H\varphi_{j}) & =\int_{-\infty}^{\infty} \varphi_{i}H\varphi_{j} \, dx  \\
+
+\end{align}
+
+\$\$
+
+\end{document}

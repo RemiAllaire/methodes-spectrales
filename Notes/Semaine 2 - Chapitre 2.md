@@ -1,4 +1,4 @@
-## 2.1 Séries de Fourier et Tchebychev
+			## 2.1 Séries de Fourier et Tchebychev
 
 Voici la série de Fourier
 $$
