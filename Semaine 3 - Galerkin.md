@@ -24,7 +24,7 @@ r_{n} =(\phi_{n},R)
 $$
 En utilisant la méthode de Galerkin, on imposant $r_{n}= 0, \quad n= 0,\dots,N$, on peut simplifier
 $$
-(\phi_{i},H\phi_{j}-E\phi_{j})(a_{i}) = (0)
+(\phi_{i},H\phi_{j}-E\phi_{j})(c_{i}) = (0)
 $$
 Cela donne une équation homogène. On cherche les solutions non-triviales afin de calculer les niveaux d'énergie (valeurs propres). En posant,
 $$
@@ -91,11 +91,12 @@ $$
 ### Calcul analytique
 #### Effet du hamiltonien
 
-On veut calculer
+On veut calculer la matrice ayant comme entrée en $ij$:
+
 $$
 \begin{aligned}
 (\varphi_{i},H\varphi_{j}-E\varphi_{j})  & =(\varphi_{i},H\varphi_{j})-(\varphi_{i},E\varphi_{j}) \\
- & =(\varphi_{i},H\varphi_{j})-E\delta _{ij}
+ & =(\varphi_{i},H\varphi_{j})-EI
 \end{aligned}
 $$
 
@@ -154,13 +155,62 @@ On peut aussi l'appliquer aux fonctions d'Hermite  ($\beta =1$) pour aboutir à
 $$
 x\psi_{n}(x)= \sqrt{ \frac{n}{2} }\psi_{n-1}(x)+\sqrt{ \frac{n+1}{2} }\psi_{n+1}(x)
 $$
-Comme les fonctions d'Hermite généralisées peuvent s'écrire comme $\varphi_{n}^{\beta}(x) =\frac{1}{\sqrt{ \beta }}\psi(\beta x)$
+Comme les fonctions d'Hermite généralisées peuvent s'écrire comme $\varphi_{n}(x) =\frac{1}{\sqrt{ \beta }}\psi(\beta x)$
+
+$$
+\begin{aligned}
+x\varphi_{n}(x) &= \frac{1}{\beta\sqrt{ \beta }}\beta x\psi(\beta x) \\
+&= \frac{1}{\beta \sqrt{ \beta }}\left( \sqrt{ \frac{n}{2} }\psi_{n-1}(\beta x)+\sqrt{ \frac{n+1}{2}}\psi_{n+1}(\beta x)\right) \\
+&= \frac{1}{\beta}\left(\sqrt{ \frac{n}{2}}\varphi_{n-1}(x)+\sqrt{ \frac{n+1}{2}}\varphi_{n+1}(x)\right)
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+x^{2}\varphi_{n}(x) &= \frac{1}{\beta}\left(\sqrt{ \frac{n}{2}}x\varphi_{n-1}(x)+\sqrt{ \frac{n+1}{2}}x\varphi_{n+1}(x)\right) \\
+&= \frac{1}{\beta^{2}}\sqrt{ \frac{n}{2} }\left(\sqrt{ \frac{n-1}{2}}\varphi_{n-2}(x)+\sqrt{ \frac{n}{2}}\varphi_{n}(x)\right) +\frac{1}{\beta^{2}}\sqrt{ \frac{n+1}{2}}\left( \sqrt{ \frac{n+1}{2}}\varphi_{n}(x)+\sqrt{ \frac{n+2}{2}}\varphi_{n+2}(x) \right) \\
+&= \frac{1}{2\beta^{2}}\left(\sqrt{ n(n-1) }\varphi_{n-2}(x)+(2n+1)\varphi_{n}(x)+\sqrt{ (n+1)(n+2) }\varphi_{n+2} \right)
+\end{aligned}
+$$
+
+
+
 On a
 
 $$
 \begin{align}
-(\varphi_{i},H\varphi_{j}) & =\int_{-\infty}^{\infty} \varphi_{i}H\varphi_{j} \, dx  \\
-&=\frac{1}{2} (1-\beta^{4})\int_{-\infty}^{\infty} \varphi_{i}\varphi_{j}x^{2} \, dx + \frac{1}{2}\beta^{2}(1+2j)\delta_{ij} 
+(\varphi_{i},H\varphi_{j}) & =\int_{-\infty}^{\infty} \varphi_{i}H\varphi_{j} \, dx , \\
+&= \frac{1}{2} (1-\beta^{4})\int_{-\infty}^{\infty} \varphi_{i}\varphi_{j}x^{2} \, dx + \frac{1}{2}\beta^{2}(1+2j)\int_{-\infty}^{\infty} \varphi_{i}\varphi_{j} \, dx,  \\
+&= \frac{1-\beta^{4}}{4\beta^{2}}\left(\sqrt{ j(j-1) }\delta_{i(j-2)}+(2j+1)\delta_{ij} +\sqrt{ (j+1)(j+2) }\delta_{i(j+2)} \right) + \frac{1}{2}\beta^{2}(1+2j)\delta_{ij}
 \end{align}
 $$
 
+### Matrice pour les valeurs propres
+
+Maintenant que nous avons obtenus la forme analytique, on peut facilement écrire la matrice $A$ qui est tridiagonale (d'épaisseur 2) et symétrique étant donné que le hamiltonien $H$ est un opérateur auto-adjoint. 
+
+On résout
+$$
+\det\left(\frac{1-\beta^{4}}{4\beta^{2}}\left(\sqrt{ j(j-1) }\delta_{i(j-2)}+(2j+1)\delta_{ij} +\sqrt{ (j+1)(j+2) }\delta_{i(j+2)} \right) + \left(\frac{1}{2}\beta^{2}(1+2j)-E\right)\delta_{ij}\right) =0o
+$$
+
+
+### Calcul par quadrature
+
+Supposons qu'on ne connaisse pas la forme analytique du produit scalaire entre les fonctions de bases et l'opérateur. On doit évaluer l'intégrale numériquement. Une façon intelligente serait par quadrature de Gauss-"polynome de base".
+
+En effet, soit $\omega_{i_{4}}, w(x)$ les poids et la fonction poids appropriés et $x_{i}$ les racines du m-ième polynome de base associé. On peut approximer une fonction (multipliée par la fonction poids) comme
+
+$$
+\int_{a}^{b}w_{i}f(x)\,dx \approx \sum_{i=1}^{m}\omega_{i}f(x_{i})
+$$
+
+Par exemple, pour les polynomes d'Hermites, on a 
+
+$$
+\int_{-\infty}^{\infty} e^{-x^{2}}f(x) \, dx \approx \sum_{i=1}^{m}\omega_{i}f(x_{i})
+$$
+
+Dans le cas de notre problème, $e^{-\beta^{2}x^{2}}f(x) =  \frac{1}{2}((1-\beta^{4})x^{2}+\beta^{2}(1+2j))\varphi_{j}\varphi_{i}$. Comme les fonctions d'Hermite généralisés sont constituées de polynomes d'Hermite, $f(x)$ est un polynome de degré $i +j$. Comme la quadrature est exacte pour les polynomes de degré inférieur ou égal à $2m-1$, il est judicieux de prendre $3n/2$ points de quadrature en tout temps de sorte qu'elle est exact jusqu'au degré $2n+2$ et plus encore pour être sûr.
+
+Cependant, il ne faut pas
